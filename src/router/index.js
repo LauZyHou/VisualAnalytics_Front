@@ -8,6 +8,8 @@ import Router from 'vue-router'
 
 // 组件
 import home from '../views/home'
+import head from '../views/head'
+import foot from '../views/foot'
 
 Vue.use(Router)
 
@@ -16,10 +18,14 @@ let router = new Router({
     {// Home页
       path: '/',
       name: 'home',
-      component: home,
+      components: {
+        head: head,
+        content: home,
+        foot: foot
+      },
       children: [],
       meta: {
-        title: '可视分析-主页'
+        title: '主页'
       }
     }
   ]
@@ -39,7 +45,7 @@ router.beforeEach((to, from, next) => {
 
 // 修改网页标题
 router.afterEach((to, from, next) => {
-  document.title = to.matched[to.matched.length - 1].meta.title
+  document.title = '可视分析' + to.matched[to.matched.length - 1].meta.title
 })
 
 // 抛出路由
