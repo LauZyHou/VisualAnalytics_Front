@@ -8,7 +8,7 @@ import Router from 'vue-router'
 
 // 组件
 import home from '../views/home'
-import head from '../views/head'
+import head_ from '../views/head'
 import foot from '../views/foot'
 
 Vue.use(Router)
@@ -19,7 +19,7 @@ let router = new Router({
       path: '/',
       name: 'home',
       components: {
-        head: head,
+        head: head_,
         content: home,
         foot: foot
       },

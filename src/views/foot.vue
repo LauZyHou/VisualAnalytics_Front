@@ -1,12 +1,8 @@
 <template>
     <footer>
-        222
+      <span>Copyright 2019-2020 ECNU 数据可视化-可视分析组</span>
     </footer>
 </template>
-
-<style scoped>
-
-</style>
 
 <script>
 export default {
@@ -17,3 +13,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ footer{
+   text-align: center;
+   background-color: aliceblue;
+ }
+</style>
