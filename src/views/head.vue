@@ -5,7 +5,7 @@
       mode="horizontal"
       @select="handleSelect"
     >
-      <el-menu-item index="1">选项一</el-menu-item>
+      <el-menu-item index="1">电影</el-menu-item>
       <el-submenu index="2">
         <template slot="title">选项二</template>
         <el-menu-item index="2-1">选项1</el-menu-item>
