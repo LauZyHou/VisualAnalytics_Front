@@ -7,15 +7,17 @@ import Router from 'vue-router'
 // import store from '../store/store'
 
 // 组件
-import home from '../views/home'
 import head_ from '../views/head'
 import foot from '../views/foot'
+
+import home from '../views/home'
+import teleplay from '../views/teleplay'
 
 Vue.use(Router)
 
 let router = new Router({
   routes: [
-    {// Home页
+    {// 电影页(Home页)
       path: '/',
       name: 'home',
       components: {
@@ -25,7 +27,20 @@ let router = new Router({
       },
       children: [],
       meta: {
-        title: '主页'
+        title: '电影'
+      }
+    },
+    {// 电视剧
+      path: '/teleplay',
+      name: 'teleplay',
+      components: {
+        head: head_,
+        content: teleplay,
+        foot: foot
+      },
+      children: [],
+      meta: {
+        title: '电视剧'
       }
     }
   ]
@@ -45,7 +60,7 @@ router.beforeEach((to, from, next) => {
 
 // 修改网页标题
 router.afterEach((to, from, next) => {
-  document.title = '可视分析' + to.matched[to.matched.length - 1].meta.title
+  document.title = '可视分析-' + to.matched[to.matched.length - 1].meta.title
 })
 
 // 抛出路由
