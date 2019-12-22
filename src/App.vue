@@ -22,7 +22,7 @@ export default {
   }
 
   section {
-    height: 85%;
+    min-height: 85%;
   }
 
   footer {

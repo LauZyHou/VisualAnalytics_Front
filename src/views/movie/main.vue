@@ -1,37 +1,28 @@
 <template>
   <section>
-    <!-- 全局 -->
     <el-row id="big-row" type="flex">
-      <!-- 1.1 左侧栏 -->
-      <el-col :span="2" id="left-tab">
+      <el-col :span="4" id="left-tab">
         <el-tabs tab-position="left" @tab-click="handleClick">
-          <el-tab-pane label="概览">概览</el-tab-pane>
-          <el-tab-pane label="查询">查询</el-tab-pane>
-          <el-tab-pane label="分析">分析</el-tab-pane>
+          <el-tab-pane v-for="item in genres" :key="item" :label="item"></el-tab-pane>
         </el-tabs>
       </el-col>
-      <!-- 1.2 右侧大区域 -->
-      <el-col :span="22" id="right-pan">
-        <template v-if="tabIndex===0">
-          ok0
-        </template>
-        <template v-else-if="tabIndex===1">
-          ok1
-        </template>
-        <template v-else-if="tabIndex===2">
-          ok2
-        </template>
+      <el-col :span="20" id="right-pan">
+        <genre-panel :genre_type="genres[tabIndex]"></genre-panel>
       </el-col>
     </el-row>
   </section>
 </template>
 
 <script>
+import { listGenres } from '../../api/api'
+import genre from './genre'
+
 export default {
-  name: 'home',
+  name: 'movie',
   data () {
     return {
-      tabIndex: 0
+      tabIndex: 0,
+      genres: []
     }
   },
   methods: {
@@ -39,6 +30,18 @@ export default {
     handleClick (tab) {
       this.tabIndex = parseInt(tab.index)
     }
+  },
+  components: {
+    'genre-panel': genre
+  },
+  created () {
+    // 先获取到电影流派(类别)枚举
+    listGenres().then(res => {
+      for (let k in res.data) {
+        this.genres.push(res.data[k]['genre'])
+      }
+      // console.log(this.genres)
+    })
   }
 }
 </script>

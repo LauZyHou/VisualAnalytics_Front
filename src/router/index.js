@@ -10,8 +10,8 @@ import Router from 'vue-router'
 import head_ from '../views/head'
 import foot from '../views/foot'
 
-import home from '../views/home'
-import teleplay from '../views/teleplay'
+import movie from '../views/movie/main'
+import teleplay from '../views/teleplay/main'
 
 Vue.use(Router)
 
@@ -19,10 +19,10 @@ let router = new Router({
   routes: [
     {// 电影页(Home页)
       path: '/',
-      name: 'home',
+      name: 'movie',
       components: {
         head: head_,
-        content: home,
+        content: movie,
         foot: foot
       },
       children: [],
@@ -46,13 +46,13 @@ let router = new Router({
   ]
 })
 
-// 进行路由判断，'/'直接跳到Home页
+// 进行路由判断，'/'直接跳到
 /*
 router.beforeEach((to, from, next) => {
   if (to.path === '/') {
     console.log('noo')
     next({
-      path: 'home'
+      path: '/teleplay'
     })
   }
 })
