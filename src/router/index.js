@@ -12,6 +12,7 @@ import foot from '../views/foot'
 
 import movie from '../views/movie/main'
 import teleplay from '../views/teleplay/main'
+import overview from '../views/overview/main'
 
 Vue.use(Router)
 
@@ -28,6 +29,18 @@ let router = new Router({
       children: [],
       meta: {
         title: '电影'
+      }
+    },
+    {// 总览页
+      path: '/overview',
+      name: 'overview',
+      components: {
+        head: head_,
+        content: overview,
+        foot: foot
+      },
+      meta: {
+        title: '总览'
       }
     },
     {// 电视剧
