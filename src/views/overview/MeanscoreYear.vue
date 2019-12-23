@@ -3,6 +3,9 @@
 </template>
 
 <script>
+
+import { listMeanScore } from '../../api/api'
+
 export default {
   name: 'MeanscoreYear',
   data () {
@@ -21,13 +24,18 @@ export default {
     }
   }, */
   mounted () {
-    for (var i = 0; i < 100; i++) {
-      this.xAxisData.push(i + 1930 + '年')
-      this.data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5)
-      this.data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5)
+    for (var i = 0; i < 92; i++) {
+      this.xAxisData.push(i + 1925 + '年')
     }
-    // 根据父组件传递来的类型,获取单词数据并生成词云
-    this.drawLine()
+
+    // 世界&中国大陆的电影得分
+    listMeanScore().then(res => {
+      this.data2 = res.data['世界']
+      this.data1 = res.data['中国大陆']
+    }).then(() => {
+      // 根据父组件传递来的类型,获取单词数据并生成词云
+      this.drawLine()
+    })
   },
   methods: {
     drawLine () {
@@ -36,7 +44,7 @@ export default {
       // 绘制图表
       let option = {
         title: {
-          text: '电影评分随年份变化'
+          text: '平均评分随年份变化(1925-2016)'
         },
         legend: {
           data: ['中国大陆', '世界'],
@@ -63,6 +71,8 @@ export default {
           }
         },
         yAxis: {
+          max: 9,
+          min: 5.5
         },
         series: [{
           name: '中国大陆',

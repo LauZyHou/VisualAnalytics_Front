@@ -28,3 +28,8 @@ export const listGenres = () => {
 export const listTypeSet = () => {
   return axios.get(`${localhost}/type_set/`)
 }
+
+// 获取1925~2016年电影平均score(世界&中国大陆)
+export const listMeanScore = () => {
+  return axios.get(`${localhost}/mean_score/`)
+}

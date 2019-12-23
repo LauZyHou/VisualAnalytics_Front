@@ -13,8 +13,14 @@ export default {
 </script>
 
 <style>
-  html,body,#app {
+  html,#app {
     height: 100%;
+    margin: 0;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
   }
 
   header {
@@ -22,7 +28,7 @@ export default {
   }
 
   section {
-    min-height: 85%;
+    min-height: 360px;
   }
 
   footer {

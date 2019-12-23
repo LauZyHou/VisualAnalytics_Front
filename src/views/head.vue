@@ -1,7 +1,7 @@
 <template>
   <header>
     <el-menu
-      default-active="1"
+      default-active="/"
       mode="horizontal"
       @select="handleSelect"
       :router="true"
