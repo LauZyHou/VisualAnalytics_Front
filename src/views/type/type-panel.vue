@@ -1,11 +1,11 @@
 <template>
-    <div>你好，{{genre_type}}</div>
+    <div>你好，{{type_name}}</div>
 </template>
 
 <script>
 export default {
-  name: 'genre',
-  props: ['genre_type'],
+  name: 'typePanel',
+  props: ['type_name'],
   data () {
     return {
 

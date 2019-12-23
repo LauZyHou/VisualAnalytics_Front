@@ -3,26 +3,26 @@
     <el-row id="big-row" type="flex">
       <el-col :span="4" id="left-tab">
         <el-tabs tab-position="left" @tab-click="handleClick">
-          <el-tab-pane v-for="item in genres" :key="item" :label="item"></el-tab-pane>
+          <el-tab-pane v-for="item in type_list" :key="item" :label="item"></el-tab-pane>
         </el-tabs>
       </el-col>
       <el-col :span="20" id="right-pan">
-        <genre-panel :genre_type="genres[tabIndex]"></genre-panel>
+        <type-panel :type_name="type_list[tabIndex]"/>
       </el-col>
     </el-row>
   </section>
 </template>
 
 <script>
-import { listGenres } from '../../api/api'
-import genre from './genre'
+import { listTypeSet } from '../../api/api'
+import typePanel from './type-panel'
 
 export default {
-  name: 'movie',
+  name: 'type',
   data () {
     return {
       tabIndex: 0,
-      genres: []
+      type_list: []
     }
   },
   methods: {
@@ -32,15 +32,14 @@ export default {
     }
   },
   components: {
-    'genre-panel': genre
+    'type-panel': typePanel
   },
   created () {
     // 先获取到电影流派(类别)枚举
-    listGenres().then(res => {
+    listTypeSet().then(res => {
       for (let k in res.data) {
-        this.genres.push(res.data[k]['genre'])
+        this.type_list.push(res.data[k])
       }
-      // console.log(this.genres)
     })
   }
 }

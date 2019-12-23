@@ -6,9 +6,9 @@
       @select="handleSelect"
       :router="true"
     >
-      <el-menu-item index="/">电影</el-menu-item>
+      <el-menu-item index="/">主页</el-menu-item>
       <el-menu-item index="/overview">总览</el-menu-item>
-      <el-menu-item index="/teleplay">电视剧</el-menu-item>
+      <el-menu-item index="/type">按类别</el-menu-item>
     </el-menu>
   </header>
 </template>

@@ -10,25 +10,25 @@ import Router from 'vue-router'
 import head_ from '../views/head'
 import foot from '../views/foot'
 
-import movie from '../views/movie/main'
-import teleplay from '../views/teleplay/main'
+import home from '../views/home/main'
 import overview from '../views/overview/main'
+import type from '../views/type/main'
 
 Vue.use(Router)
 
 let router = new Router({
   routes: [
-    {// 电影页(Home页)
+    {// Home
       path: '/',
-      name: 'movie',
+      name: 'home',
       components: {
         head: head_,
-        content: movie,
+        content: home,
         foot: foot
       },
       children: [],
       meta: {
-        title: '电影'
+        title: '主页'
       }
     },
     {// 总览页
@@ -43,17 +43,17 @@ let router = new Router({
         title: '总览'
       }
     },
-    {// 电视剧
-      path: '/teleplay',
-      name: 'teleplay',
+    {// 按类别
+      path: '/type',
+      name: 'movie',
       components: {
         head: head_,
-        content: teleplay,
+        content: type,
         foot: foot
       },
       children: [],
       meta: {
-        title: '电视剧'
+        title: '按类别'
       }
     }
   ]

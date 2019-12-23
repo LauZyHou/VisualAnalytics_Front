@@ -1,5 +1,5 @@
 <template>
-  <div id="CommentYear" :style="{width: '1000px', height: '280px'}"></div>
+  <div id="CommentYear" class="childpan" :style="{width: '1000px', height: '280px'}"></div>
 </template>
 
 <script>
@@ -40,7 +40,7 @@ export default {
           }
         },
         legend: {
-          data: ['中国电影数', '世界电影数', '中国电影评论数']
+          data: ['中国电影数', '世界电影数', '中国电影评论数', '世界电影评论数']
         },
         xAxis: [
           {
@@ -89,6 +89,12 @@ export default {
             type: 'line',
             yAxisIndex: 1,
             data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+          },
+          {
+            name: '世界电影评论数',
+            type: 'line',
+            yAxisIndex: 1,
+            data: [3.0, 3.2, 4.3, 5.5, 7.3, 12.2, 21.3, 25.4, 26.0, 19.5, 13.0, 7.2]
           }
         ]
       }
@@ -100,8 +106,5 @@ export default {
 </script>
 
 <style scoped>
-#CommentYear {
-  margin: 0 auto;
-  /* background-color: azure; */
-}
+
 </style>

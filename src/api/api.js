@@ -23,3 +23,8 @@ export const listMovieByGenres = genre => {
 export const listGenres = () => {
   return axios.get(`${localhost}/movie_genres/`)
 }
+
+// 获取类别type_set
+export const listTypeSet = () => {
+  return axios.get(`${localhost}/type_set/`)
+}

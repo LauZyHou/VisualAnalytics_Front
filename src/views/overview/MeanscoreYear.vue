@@ -1,5 +1,5 @@
 <template>
-  <div id="MeanscoreYear" :style="{width: '1000px', height: '280px'}"></div>
+  <div id="MeanscoreYear" class="childpan" :style="{width: '1000px', height: '280px'}"></div>
 </template>
 
 <script>
@@ -92,8 +92,5 @@ export default {
 </script>
 
 <style scoped>
-#MeanscoreYear {
-  margin: 0 auto;
-  /* background-color: azure; */
-}
+
 </style>

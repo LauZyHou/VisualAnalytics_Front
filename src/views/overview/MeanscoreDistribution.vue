@@ -1,5 +1,5 @@
 <template>
-  <div id="MeanscoreDistribution" :style="{width: '1000px', height: '280px'}"></div>
+  <div id="MeanscoreDistribution" class="childpan" :style="{width: '1000px', height: '280px'}"></div>
 </template>
 
 <script>
@@ -101,8 +101,5 @@ export default {
 </script>
 
 <style scoped>
-#MeanscoreDistribution {
-  margin: 0 auto;
-  /* background-color: azure; */
-}
+
 </style>
