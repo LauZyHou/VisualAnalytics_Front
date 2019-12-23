@@ -33,7 +33,6 @@ export default {
       this.data2 = res.data['世界']
       this.data1 = res.data['中国大陆']
     }).then(() => {
-      // 根据父组件传递来的类型,获取单词数据并生成词云
       this.drawLine()
     })
   },

@@ -32,7 +32,7 @@ export default {
           }
         },
         legend: {
-          data: ['5分以下', '5-6.6分', '6.6-7.6分', '7.6-8.6分', '8.6分以上']
+          data: ['5分以下', '5-6分', '6-7分', '7-8分', '8分以上']
         },
         toolbox: {
           feature: {
@@ -49,7 +49,7 @@ export default {
           {
             type: 'category',
             boundaryGap: false,
-            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            data: ['2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年']
           }
         ],
         yAxis: [
@@ -66,28 +66,28 @@ export default {
             data: [120, 132, 101, 134, 90, 230, 210]
           },
           {
-            name: '5-6.6分',
+            name: '5-6分',
             type: 'line',
             stack: '总量',
             areaStyle: {},
             data: [220, 182, 191, 234, 290, 330, 310]
           },
           {
-            name: '6.6-7.6分',
+            name: '6-7分',
             type: 'line',
             stack: '总量',
             areaStyle: {},
             data: [150, 232, 201, 154, 190, 330, 410]
           },
           {
-            name: '7.6-8.6分',
+            name: '7-8分',
             type: 'line',
             stack: '总量',
             areaStyle: {normal: {}},
             data: [320, 332, 301, 334, 390, 330, 320]
           },
           {
-            name: '8.6分以上',
+            name: '8分以上',
             type: 'line',
             stack: '总量',
             label: {

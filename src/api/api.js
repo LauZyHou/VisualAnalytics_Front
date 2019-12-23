@@ -33,3 +33,13 @@ export const listTypeSet = () => {
 export const listMeanScore = () => {
   return axios.get(`${localhost}/mean_score/`)
 }
+
+// 获取[0, 5, 6.5, 7.5, 8, 8.5, 9, 10]两两区间下的score分布(世界&中国大陆)
+export const listScoreDistri = () => {
+  return axios.get(`${localhost}/score_distri/`)
+}
+
+// 获取电影数目、评论数目随时间的变化(1920-2016)
+export const listMvAndPNum = () => {
+  return axios.get(`${localhost}/mvnum_pnum/`)
+}

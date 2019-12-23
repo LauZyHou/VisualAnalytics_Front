@@ -3,10 +3,14 @@
 </template>
 
 <script>
+import { listScoreDistri } from '../../api/api'
+
 export default {
   name: 'MeanscoreDistribution',
   data () {
     return {
+      data1: [],
+      data2: []
     }
   },
   /*
@@ -18,8 +22,12 @@ export default {
     }
   }, */
   mounted () {
-    // 根据父组件传递来的类型,获取单词数据并生成词云
-    this.drawLine()
+    listScoreDistri().then(res => {
+      this.data2 = res.data['世界']
+      this.data1 = res.data['中国大陆']
+    }).then(() => {
+      this.drawLine()
+    })
   },
   methods: {
     drawLine () {
@@ -62,7 +70,7 @@ export default {
           {
             name: '中国大陆',
             type: 'bar',
-            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6],
+            data: this.data1,
             markPoint: {
               data: [
                 {type: 'max', name: '最大值'},
@@ -78,7 +86,7 @@ export default {
           {
             name: '世界',
             type: 'bar',
-            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6],
+            data: this.data2,
             markPoint: {
               data: [
                 {type: 'max', name: '最大值'},
