@@ -3,15 +3,21 @@
 </template>
 
 <script>
+import { listScoreFlow } from '../../api/api'
+
 export default {
   name: 'MeanscoreStackWorld',
   data () {
     return {
+      data: [[], [], [], [], []]
     }
   },
   mounted () {
-    // 根据父组件传递来的类型,获取单词数据并生成词云
-    this.drawLine()
+    listScoreFlow().then(res => {
+      this.data = res.data['世界']
+    }).then(() => {
+      this.drawLine()
+    })
   },
   methods: {
     drawLine () {
@@ -20,7 +26,7 @@ export default {
       // 绘制图表
       let option = {
         title: {
-          text: '电影得分占比(世界)'
+          text: '近年得分情况(世界)'
         },
         tooltip: {
           trigger: 'axis',
@@ -63,28 +69,28 @@ export default {
             type: 'line',
             stack: '总量',
             areaStyle: {},
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: this.data[0]
           },
           {
             name: '5-6分',
             type: 'line',
             stack: '总量',
             areaStyle: {},
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: this.data[1]
           },
           {
             name: '6-7分',
             type: 'line',
             stack: '总量',
             areaStyle: {},
-            data: [150, 232, 201, 154, 190, 330, 410]
+            data: this.data[2]
           },
           {
             name: '7-8分',
             type: 'line',
             stack: '总量',
             areaStyle: {normal: {}},
-            data: [320, 332, 301, 334, 390, 330, 320]
+            data: this.data[3]
           },
           {
             name: '8分以上',
@@ -97,7 +103,7 @@ export default {
               }
             },
             areaStyle: {normal: {}},
-            data: [120, 232, 201, 234, 590, 630, 620]
+            data: this.data[4]
           }
         ]
       }

@@ -43,3 +43,8 @@ export const listScoreDistri = () => {
 export const listMvAndPNum = () => {
   return axios.get(`${localhost}/mvnum_pnum/`)
 }
+
+// 获取2010-2016年五个区间评分的电影数目变化
+export const listScoreFlow = () => {
+  return axios.get(`${localhost}/score_flow/`)
+}
