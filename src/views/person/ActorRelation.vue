@@ -26,15 +26,15 @@ export default {
       )
       myChart.showLoading()
       $.get(
-        '../../static/les-miserables.gexf',
+        '../../static/actor_relation2.gexf',
         function (xml) {
           myChart.hideLoading()
 
           var graph = echarts.dataTool.gexf.parse(xml)
           var categories = []
-          for (var i = 0; i < 9; i++) {
+          for (var i = 0; i < 7; i++) {
             categories[i] = {
-              name: '类目' + i
+              name: '热度' + (7 - i)
             }
           }
           graph.nodes.forEach(function (node) {

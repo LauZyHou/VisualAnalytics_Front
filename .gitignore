@@ -3,6 +3,6 @@
 /ignore
 .vscode/
 /src/assets/videos
-/static/*
+#/static/*
 !/static/*.gif.vs
 .vs
