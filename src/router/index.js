@@ -13,6 +13,7 @@ import foot from '../views/foot'
 import home from '../views/home/main'
 import overview from '../views/overview/main'
 import type from '../views/type/main'
+import person from '../views/person/main'
 
 Vue.use(Router)
 
@@ -43,9 +44,9 @@ let router = new Router({
         title: '总览'
       }
     },
-    {// 按类别
+    {// 电影类别
       path: '/type',
-      name: 'movie',
+      name: 'type',
       components: {
         head: head_,
         content: type,
@@ -53,7 +54,20 @@ let router = new Router({
       },
       children: [],
       meta: {
-        title: '按类别'
+        title: '电影类别'
+      }
+    },
+    {// 人物关系
+      path: '/person',
+      name: 'person',
+      components: {
+        head: head_,
+        content: person,
+        foot: foot
+      },
+      children: [],
+      meta: {
+        title: '人物关系'
       }
     }
   ]

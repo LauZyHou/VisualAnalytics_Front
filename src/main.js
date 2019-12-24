@@ -25,6 +25,9 @@ Vue.use(ElementUI)
 Vue.prototype.$axios = Axios
 Vue.prototype.$echarts = echarts
 
+require('echarts/src/chart/graph')
+echarts.dataTool = require('../js/dataTool')
+
 // 这里不用"application/json"的话,使用post请求后台时没参数就没有放在body里,所以请求不到
 Axios.defaults.headers = {
   'Content-Type': 'application/json'

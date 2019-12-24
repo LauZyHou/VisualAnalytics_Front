@@ -15,14 +15,6 @@ export default {
       data2: []
     }
   },
-  /*
-  props: {
-    // 父组件使用时传递此值:1->当前用户的测验常错词,0/其它->随机
-    kind: {
-      type: Number,
-      required: true
-    }
-  }, */
   mounted () {
     for (var i = 0; i < 92; i++) {
       this.xAxisData.push(i + 1925 + '年')
