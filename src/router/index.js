@@ -13,6 +13,7 @@ import foot from '../views/foot'
 import home from '../views/home/main'
 import overview from '../views/overview/main'
 import type from '../views/type/main'
+import zone from '../views/zone/main'
 import person from '../views/person/main'
 
 Vue.use(Router)
@@ -55,6 +56,19 @@ let router = new Router({
       children: [],
       meta: {
         title: '按类别'
+      }
+    },
+    {// 按地区
+      path: '/zone',
+      name: 'zone',
+      components: {
+        head: head_,
+        content: zone,
+        foot: foot
+      },
+      children: [],
+      meta: {
+        title: '按地区'
       }
     },
     {// 人物关系

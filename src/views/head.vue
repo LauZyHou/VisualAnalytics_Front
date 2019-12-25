@@ -9,6 +9,7 @@
       <el-menu-item index="/">主页</el-menu-item>
       <el-menu-item index="/overview">总览</el-menu-item>
       <el-menu-item index="/type">按类别</el-menu-item>
+      <el-menu-item index="/zone">按地区</el-menu-item>
       <el-menu-item index="/person">人物关系</el-menu-item>
     </el-menu>
   </header>

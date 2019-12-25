@@ -3,32 +3,32 @@
     <el-row id="big-row" type="flex">
       <el-col :span="4" id="left-tab">
         <el-tabs tab-position="left" @tab-click="handleClick">
-          <el-tab-pane v-for="item in type_list" :key="item" :label="item"></el-tab-pane>
+          <el-tab-pane v-for="item in zone_list" :key="item" :label="item"></el-tab-pane>
         </el-tabs>
       </el-col>
       <el-col :span="20" id="right-pan">
-        <type-score :type_name="type_list[tabIndex]"/>
+        <zone-score :zone_name="zone_list[tabIndex]"/>
         <hr>
-        <type-account :type_name="type_list[tabIndex]"/>
+        <zone-account :zone_name="zone_list[tabIndex]"/>
         <hr>
-        <type-director :type_name="type_list[tabIndex]"/>
+        <zone-director :zone_name="zone_list[tabIndex]"/>
       </el-col>
     </el-row>
   </section>
 </template>
 
 <script>
-import { listType } from '../../api/api'
-import TypeScore from './TypeScore'
-import TypeAccount from './TypeAccount'
-import TypeDirector from './TypeDirector'
+import { listZone } from '../../api/api'
+import ZoneScore from './ZoneScore'
+import ZoneAccount from './ZoneAccount'
+import ZoneDirector from './ZoneDirector'
 
 export default {
-  name: 'type',
+  name: 'zone',
   data () {
     return {
       tabIndex: 0,
-      type_list: []
+      zone_list: []
     }
   },
   methods: {
@@ -38,14 +38,14 @@ export default {
     }
   },
   components: {
-    'type-score': TypeScore,
-    'type-account': TypeAccount,
-    'type-director': TypeDirector
+    'zone-score': ZoneScore,
+    'zone-account': ZoneAccount,
+    'zone-director': ZoneDirector
   },
   created () {
     // 先获取到电影流派(类别)枚举
-    listType().then(res => {
-      this.type_list = res.data
+    listZone().then(res => {
+      this.zone_list = res.data
     })
   }
 }

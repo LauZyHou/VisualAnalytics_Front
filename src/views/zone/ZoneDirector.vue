@@ -1,15 +1,15 @@
 <template>
-    <div id="TypeDirector" class="childpan" :style="{width: '900px', height: '400px'}"></div>
+    <div id="ZoneDirector" class="childpan" :style="{width: '900px', height: '400px'}"></div>
 </template>
 
 <script>
-import { retrieveTypeDirector } from '../../api/api'
+import { retrieveZoneDirector } from '../../api/api'
 
 export default {
-  name: 'TypeDirector',
-  props: ['type_name'],
+  name: 'ZoneDirector',
+  props: ['zone_name'],
   watch: {
-    type_name (v) {
+    zone_name (v) {
       this.refreshData(v)
     }
   },
@@ -24,11 +24,11 @@ export default {
   methods: {
     drawLine () {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById('TypeDirector'))
+      let myChart = this.$echarts.init(document.getElementById('ZoneDirector'))
       // 绘制图表
       let option = {
         title: {
-          text: '常见导演·' + this.type_name,
+          text: '常见导演·' + this.zone_name,
           x: 'center'
         },
         legend: {
@@ -47,8 +47,6 @@ export default {
         },
         xAxis: {type: 'category'},
         yAxis: {},
-        // Declare several bar series, each will be mapped
-        // to a column of dataset.source by default.
         series: [
           {type: 'bar'},
           {type: 'bar'},
@@ -59,9 +57,9 @@ export default {
       myChart.setOption(option)
     },
     refreshData (v = undefined) {
-      let r = v === undefined ? this.type_name : v
+      let r = v === undefined ? this.zone_name : v
       if (r === undefined) { return }
-      retrieveTypeDirector(r).then(res => {
+      retrieveZoneDirector(r).then(res => {
         this.data = res.data
       }).then(() => {
         this.drawLine()

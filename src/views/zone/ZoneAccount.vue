@@ -1,15 +1,15 @@
 <template>
-    <div id="TypeAccount" class="childpan" :style="{width: '900px', height: '400px'}"></div>
+    <div id="ZoneAccount" class="childpan" :style="{width: '900px', height: '400px'}"></div>
 </template>
 
 <script>
-import { retrieveTypeAccount } from '../../api/api'
+import { retrieveZoneAccount } from '../../api/api'
 
 export default {
-  name: 'TypeAccount',
-  props: ['type_name'],
+  name: 'ZoneAccount',
+  props: ['zone_name'],
   watch: {
-    type_name (v) {
+    zone_name (v) {
       this.refreshData(v)
     }
   },
@@ -24,11 +24,11 @@ export default {
   methods: {
     drawLine () {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById('TypeAccount'))
+      let myChart = this.$echarts.init(document.getElementById('ZoneAccount'))
       // 绘制图表
       let option = {
         title: {
-          text: '票房情况·' + this.type_name,
+          text: '票房情况·' + this.zone_name,
           x: 'center'
         },
         tooltip: {
@@ -75,9 +75,9 @@ export default {
       myChart.setOption(option)
     },
     refreshData (v = null) {
-      let r = v === null ? this.type_name : v
+      let r = v === null ? this.zone_name : v
       if (r === undefined) { return }
-      retrieveTypeAccount(r).then(res => {
+      retrieveZoneAccount(r).then(res => {
         this.data = res.data
       }).then(() => {
         this.drawLine()

@@ -31,6 +31,7 @@ export default {
           myChart.hideLoading()
 
           var graph = echarts.dataTool.gexf.parse(xml)
+          // console.log(graph)
           var categories = []
           for (var i = 0; i < 7; i++) {
             categories[i] = {
@@ -59,6 +60,13 @@ export default {
                 data: categories.map(function (a) {
                   return a.name
                 })
+                // selected: { // 设置默认不显示的Legend
+                //   '热度1': false,
+                //   '热度2': false,
+                //   '热度3': false,
+                //   '热度4': false,
+                //   '热度6': false
+                // }
               }
             ],
             animationDurationUpdate: 1500,
@@ -74,7 +82,7 @@ export default {
                 data: graph.nodes,
                 links: graph.links,
                 categories: categories,
-                roam: true,
+                // roam: true, // 是否开启鼠标缩放，平移漫游
                 label: {
                   normal: {
                     position: 'right',
@@ -87,6 +95,15 @@ export default {
                     curveness: 0.3
                   }
                 }
+                // edgeLabel: {// 线条的边缘标签
+                //   normal: {
+                //     show: true,
+                //     // 通过回调函数设置连线上的标签
+                //     formatter: function (x) {
+                //       return x.data.weight
+                //     }
+                //   }
+                // }
               }
             ]
           }

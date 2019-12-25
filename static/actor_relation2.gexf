@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
-<gexf xmlns="http://www.gephi.org/gexf/1.1draft" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="xsi" version="1.1" ns0:schemaLocation="http://www.gephi.org/gexf/1.1draft http://gephi.org/gexf/1.1draft.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
   <meta lastmodified="2019-12-25T01:25:53.722483">
     <creator>LauZyHou</creator>
     <description>Actor Relation</description>
@@ -8,7 +8,7 @@
     <!-- <attributes class="node" mode="dynamic"/> -->
     <attributes class="node" mode="static">
       <attribute id="modularity_class" title="Modularity Class" type="integer">
-        <default>0</default>
+        <!-- <default>0</default> -->
       </attribute>
     </attributes>
     <!-- <attributes class="edge" mode="dynamic"/> -->

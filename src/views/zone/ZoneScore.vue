@@ -1,15 +1,15 @@
 <template>
-    <div id="TypeScore" class="childpan" :style="{width: '900px', height: '400px'}"></div>
+    <div id="ZoneScore" class="childpan" :style="{width: '900px', height: '400px'}"></div>
 </template>
 
 <script>
-import { retrieveTypeScore } from '../../api/api'
+import { retrieveZoneScore } from '../../api/api'
 
 export default {
-  name: 'TypeScore',
-  props: ['type_name'],
+  name: 'ZoneScore',
+  props: ['zone_name'],
   watch: {
-    type_name (v) {
+    zone_name (v) {
       this.refreshData(v)
     }
   },
@@ -32,11 +32,11 @@ export default {
   methods: {
     drawLine () {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById('TypeScore'))
+      let myChart = this.$echarts.init(document.getElementById('ZoneScore'))
       // 绘制图表
       let option = {
         title: {
-          text: '得分情况·' + this.type_name,
+          text: '得分情况·' + this.zone_name,
           x: 'center'
         },
         tooltip: {
@@ -133,9 +133,9 @@ export default {
       myChart.setOption(option)
     },
     refreshData (v = null) {
-      let r = v === null ? this.type_name : v
+      let r = v === null ? this.zone_name : v
       if (r === undefined) { return }
-      retrieveTypeScore(r).then(res => {
+      retrieveZoneScore(r).then(res => {
         this.data = res.data
       }).then(() => {
         this.drawLine()

@@ -24,9 +24,14 @@ export const listGenres = () => {
   return axios.get(`${localhost}/movie_genres/`)
 }
 
-// 获取类别type_set
-export const listTypeSet = () => {
-  return axios.get(`${localhost}/type_set/`)
+// 获取类别枚举列表
+export const listType = () => {
+  return axios.get(`${localhost}/type_list/`)
+}
+
+// 获取地区枚举列表
+export const listZone = () => {
+  return axios.get(`${localhost}/zone_list/`)
 }
 
 // 获取1925~2016年电影平均score(世界&中国大陆)
@@ -52,4 +57,29 @@ export const listScoreFlow = () => {
 // 获取指定类型的电影的常见导演的score分布
 export const retrieveTypeDirector = type => {
   return axios.get(`${localhost}/type_director/` + type + '/')
+}
+
+// 获取指定类型的电影的score分布
+export const retrieveTypeScore = type => {
+  return axios.get(`${localhost}/type_score/` + type + '/')
+}
+
+// 获取指定类型的电影的account分布
+export const retrieveTypeAccount = type => {
+  return axios.get(`${localhost}/type_account/` + type + '/')
+}
+
+// 获取指定地区的电影的score分布
+export const retrieveZoneScore = zone => {
+  return axios.get(`${localhost}/zone_score/` + zone + '/')
+}
+
+// 获取指定类型的电影的account分布
+export const retrieveZoneAccount = zone => {
+  return axios.get(`${localhost}/zone_account/` + zone + '/')
+}
+
+// 获取指定地区的电影的account分布
+export const retrieveZoneDirector = zone => {
+  return axios.get(`${localhost}/zone_director/` + zone + '/')
 }
