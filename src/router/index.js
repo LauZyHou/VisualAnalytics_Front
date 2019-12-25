@@ -44,7 +44,7 @@ let router = new Router({
         title: '总览'
       }
     },
-    {// 电影类别
+    {// 按类别
       path: '/type',
       name: 'type',
       components: {
@@ -54,7 +54,7 @@ let router = new Router({
       },
       children: [],
       meta: {
-        title: '电影类别'
+        title: '按类别'
       }
     },
     {// 人物关系

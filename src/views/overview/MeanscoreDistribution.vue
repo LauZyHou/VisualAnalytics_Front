@@ -13,14 +13,6 @@ export default {
       data2: []
     }
   },
-  /*
-  props: {
-    // 父组件使用时传递此值:1->当前用户的测验常错词,0/其它->随机
-    kind: {
-      type: Number,
-      required: true
-    }
-  }, */
   mounted () {
     listScoreDistri().then(res => {
       this.data2 = res.data['世界']

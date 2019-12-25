@@ -48,3 +48,8 @@ export const listMvAndPNum = () => {
 export const listScoreFlow = () => {
   return axios.get(`${localhost}/score_flow/`)
 }
+
+// 获取指定类型的电影的常见导演的score分布
+export const retrieveTypeDirector = type => {
+  return axios.get(`${localhost}/type_director/` + type + '/')
+}

@@ -7,7 +7,11 @@
         </el-tabs>
       </el-col>
       <el-col :span="20" id="right-pan">
-        <type-panel :type_name="type_list[tabIndex]"/>
+        <type-score :type_name="type_list[tabIndex]"/>
+        <hr>
+        <type-account :type_name="type_list[tabIndex]"/>
+        <hr>
+        <type-director :type_name="type_list[tabIndex]"/>
       </el-col>
     </el-row>
   </section>
@@ -15,7 +19,9 @@
 
 <script>
 import { listTypeSet } from '../../api/api'
-import typePanel from './type-panel'
+import TypeScore from './TypeScore'
+import TypeAccount from './TypeAccount'
+import TypeDirector from './TypeDirector'
 
 export default {
   name: 'type',
@@ -32,7 +38,9 @@ export default {
     }
   },
   components: {
-    'type-panel': typePanel
+    'type-score': TypeScore,
+    'type-account': TypeAccount,
+    'type-director': TypeDirector
   },
   created () {
     // 先获取到电影流派(类别)枚举
@@ -61,8 +69,8 @@ export default {
   height: 100%;
 }
 
-#left-tab {
-
+#right-pan {
+  padding: 30px 0px 30px 60px;
 }
 
 #right-pan {
