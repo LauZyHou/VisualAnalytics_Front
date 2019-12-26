@@ -51,7 +51,7 @@ export default {
           })
           let option = {
             title: {
-              text: '演员参演关系'
+              text: '演员参演情况'
             },
             tooltip: {},
             legend: [
@@ -73,7 +73,7 @@ export default {
             animationEasingUpdate: 'quinticInOut',
             series: [
               {
-                name: '演员参演关系',
+                name: '演员参演情况',
                 type: 'graph',
                 layout: 'circular',
                 circular: {

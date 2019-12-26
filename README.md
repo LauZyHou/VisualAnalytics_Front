@@ -1,6 +1,8 @@
 # VisualAnalytics_Front
 
-可视分析(前端)，数据可视化课程项目。
+豆瓣电影可视分析(前端)，Vue.js+ElementUI+ECharts，数据可视化课程项目。
+
+![Vue.js](https://img.shields.io/badge/Vue.js-2.9.6-brightgreen.svg)
 
 ## Build Setup
 

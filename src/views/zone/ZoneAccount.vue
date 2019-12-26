@@ -28,7 +28,7 @@ export default {
       // 绘制图表
       let option = {
         title: {
-          text: '票房情况·' + this.zone_name,
+          text: '评论数情况·' + this.zone_name,
           x: 'center'
         },
         tooltip: {
@@ -56,7 +56,7 @@ export default {
         calculable: true,
         series: [
           {
-            name: '票房情况',
+            name: '评论数情况',
             type: 'pie',
             radius: [30, 110],
             // center: ['75%', '50%'],
